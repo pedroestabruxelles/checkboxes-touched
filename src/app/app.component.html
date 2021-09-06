@@ -1,0 +1,38 @@
+<mtx-checkbox-group
+  [items]="cars"
+  [formControl]="f"
+  required
+></mtx-checkbox-group>
+
+<pre>
+  valid: {{ f.valid }}
+  touched: {{ f.touched }}
+</pre>
+<hr />
+<mat-checkbox [formControl]="f2" required>Checked</mat-checkbox>
+
+<pre>
+  valid: {{ f2.valid }}
+  touched: {{ f2.touched }}
+</pre>
+<hr />
+<label>Pick your favorite season</label>
+<mat-radio-group [formControl]="f3" required>
+  <mat-radio-button *ngFor="let season of seasons" [value]="season">
+    {{ season }}
+  </mat-radio-button>
+</mat-radio-group>
+<pre>
+  valid: {{ f3.valid }}
+  touched: {{ f3.touched }}
+</pre>
+<hr />
+<mat-form-field appearance="outline" floatLabel="always">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="text" [formControl]="f4" required />
+</mat-form-field>
+
+<pre>
+  valid: {{ f4.valid }}
+  touched: {{ f4.touched }}
+</pre>
